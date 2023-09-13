@@ -22,6 +22,9 @@ describe('example to-do app', () => {
     cy.visit('https://example.cypress.io/todo3')
     cy.visit('https://example.cypress.io/todo4')
     cy.visit('https://example.cypress.io/todo5')
+    cy.visit('https://example.cypress.io/todo6')
+    cy.visit('https://example.cypress.io/todo7')
+    cy.visit('https://example.cypress.io/todo8')
   })
 
   it('displays two todo items by default', () => {
