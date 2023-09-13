@@ -4,6 +4,7 @@ context('Actions', () => {
   beforeEach(() => {
     cy.log('new line added for git demo')
     cy.log('new line added for git branch demo')
+    cy.log('new line added for git merge demo')
     cy.visit('https://example.cypress.io/commands/actions')
   })
 
