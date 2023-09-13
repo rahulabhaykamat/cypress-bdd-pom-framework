@@ -1,0 +1,17 @@
+{
+  "name": "cypress-bdd-pom-framework",
+  "version": "1.0.0",
+  "description": "complete end to end cypress automation framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rahul Abhay Kamat",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.1.0"
+  },
+  "dependencies": {
+    "npx": "^10.2.2"
+  }
+}
