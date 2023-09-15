@@ -9,6 +9,7 @@
   "author": "Rahul Abhay Kamat",
   "license": "ISC",
   "devDependencies": {
+    "@cypress/xpath": "^2.0.3",
     "cypress": "^13.1.0"
   },
   "dependencies": {
