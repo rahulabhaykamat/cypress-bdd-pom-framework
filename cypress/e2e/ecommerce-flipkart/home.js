@@ -1,6 +1,6 @@
 ///<reference types='Cypress'/>
 
-import home from "../../support/pageObject/ecommerce-myntra/homePage";
+import home from "../../support/pageObject/ecommerce-flipkart/homePage";
 const rueHome = new home
 
 before(() => {
