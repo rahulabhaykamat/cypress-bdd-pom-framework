@@ -1,47 +1,58 @@
 class homePage {
 
     getLoginClose(){
-        return cy.get("cy.get('._30XB9F')")
+        return cy.get('._30XB9F')
     }
 
     getL1Grocery(){
-        return cy.xpath("//div[contains(text(),'Grocery')]")
+        return cy.xpath("//span[contains(text(),'Grocery')]")
     }
 
     getL1Mobiles(){
-        return cy.xpath("//div[contains(text(),'Mobiles')]")
+        return cy.xpath("//span[contains(text(),'Mobiles')]")
     }
 
     getL1Fashion(){
-        return cy.xpath("//div[contains(text(),'Fashion')]")
+        return cy.xpath("//span[contains(text(),'Fashion')]")
     }
 
     getL1Electronics(){
-        return cy.xpath("//div[contains(text(),'Electronics')]")
+        return cy.xpath("//span[contains(text(),'Electronics')]")
     }
 
     getL1HomeFurniture(){
-        return cy.xpath("//div[contains(text(),'Home & Furniture')]")
+        return cy.xpath("//span[contains(text(),'Home & Furniture')]")
     }
 
     getL1Appliances(){
-        return cy.xpath("//div[contains(text(),'Appliances')]")
+        return cy.xpath("//span[contains(text(),'Appliances')]")
     }
 
     getL1Travel(){
-        return cy.xpath("//div[contains(text(),'Travel')]")
+        return cy.xpath("//span[contains(text(),'Travel')]")
     }
 
     getL1BeautyToysMore(){
-        return cy.xpath("//div[contains(text(),'Beauty, Toys & More')]")
+        return cy.xpath("//span[contains(text(),'Beauty, Toys & More')]")
     }
 
     getL1TwoWheelers(){
-        return cy.xpath("//div[contains(text(),'Two Wheelers')]")
+        return cy.xpath("//*[contains(text(),'Two Wheelers')]")
     }
 
     getSearchTextBox(){
         return cy.get("[name='q']")
+    }
+
+    validateDefaultSearchCategories(){
+        globalThis.data.search.forEach(function(element){
+            cy.get('._1sFryS._2x2Mmc>li').each(($el,index,$list)=>{
+                cy.get('._1sFryS._2x2Mmc>li').eq(index + 1).should('contain.text',element)
+                // cy.wrap($el).find('.YGcVZO').should('contain.text','mobiles')
+            }).then(($list)=>{
+                expect($list).to.have.length(8)
+            })
+        })
     }
 }
 export default homePage

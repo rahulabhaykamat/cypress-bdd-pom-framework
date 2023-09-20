@@ -3,9 +3,12 @@
 import home from "../../support/pageObject/ecommerce-flipkart/homePage";
 const rueHome = new home
 
-before(() => {
+beforeEach(() => {
+    cy.fixture('flipkart').then((data)=>{
+        globalThis.data=data
+    })
     cy.visit('https://www.flipkart.com/')
-    // rueHome.getLoginClose().click({force:true})
+    rueHome.getLoginClose().click({force:true})
 });
 
 describe('validate home page', () => {
@@ -18,11 +21,14 @@ describe('validate home page', () => {
         rueHome.getL1Appliances().should('be.visible')
         rueHome.getL1Travel().should('be.visible')
         rueHome.getL1BeautyToysMore().should('be.visible')
-        rueHome.getL1TwoWheelers().should('be.visible')
+        rueHome.getL1TwoWheelers().scrollIntoView().should('be.visible')
         rueHome.getSearchTextBox().should('be.visible')
     });
 
-    it('validate Search functionality', () => {
+    it.only('validate Search functionality', () => {
         rueHome.getSearchTextBox().click()
+        rueHome.validateDefaultSearchCategories()
+        // YGcVZO
+
     });
 });
