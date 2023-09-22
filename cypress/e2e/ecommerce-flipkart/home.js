@@ -3,10 +3,13 @@
 import home from "../../support/pageObject/ecommerce-flipkart/homePage";
 const rueHome = new home
 
-beforeEach(() => {
+before(() => {
     cy.fixture('flipkart').then((data)=>{
         globalThis.data=data
     })
+});
+
+beforeEach(() => {
     cy.visit('https://www.flipkart.com/')
     rueHome.getLoginClose().click({force:true})
 });

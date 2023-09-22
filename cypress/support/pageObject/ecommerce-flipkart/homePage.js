@@ -46,9 +46,9 @@ class homePage {
 
     validateDefaultSearchCategories(){
         globalThis.data.search.forEach(function(element){
+            cy.log(element)
             cy.get('._1sFryS._2x2Mmc>li').each(($el,index,$list)=>{
                 cy.get('._1sFryS._2x2Mmc>li').eq(index + 1).should('contain.text',element)
-                // cy.wrap($el).find('.YGcVZO').should('contain.text','mobiles')
             }).then(($list)=>{
                 expect($list).to.have.length(8)
             })
